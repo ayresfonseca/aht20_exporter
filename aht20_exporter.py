@@ -20,7 +20,7 @@ aht20_temperature_celsius = Gauge(
     ["sensor"],
 )
 aht20_humidity = Gauge(
-    "aht22_humidity", "Humidity in percents provided by dht sensor", ["sensor"]
+    "aht20_humidity", "Humidity in percents provided by dht sensor", ["sensor"]
 )
 
 
