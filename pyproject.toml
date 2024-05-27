@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 adafruit-circuitpython-tca9548a = "^0.7.3"
 adafruit-circuitpython-ahtx0 = "^1.0.21"
 prometheus-client = "^0.20.0"
