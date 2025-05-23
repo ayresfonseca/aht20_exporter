@@ -4,15 +4,15 @@ adafruit-blinka==8.58.1 ; python_version >= "3.11" \
 adafruit-circuitpython-ahtx0==1.0.26 ; python_version >= "3.11" \
     --hash=sha256:091f4b043dd7eca74d0f795d912c61cc1cd5e0ab445d6e2fda88c74c4041e720 \
     --hash=sha256:a7bf1fc8269cae5328004747bb3f95a5fb66832285494b80e72e555d472ddcfa
-adafruit-circuitpython-busdevice==5.2.11 ; python_version >= "3.11" \
-    --hash=sha256:a9a1310bee7021703ccc247bb3ff04d0873573948a6c7bee9016361cd6707a71 \
-    --hash=sha256:d4379c9ae86a15f7044dea815a94525ca9eda6a7c0b2fa0e75cf9e700c9384b8
-adafruit-circuitpython-connectionmanager==3.1.3 ; python_version >= "3.11" \
-    --hash=sha256:0f133bdedf454ede0c0a866ed605fe166cc85f75cfcea74758e3622ae403e5f9 \
-    --hash=sha256:9df3a4c617dae27bad1ac8607f1a084312c8498d831ebe1c6a2c8d5cb309daea
-adafruit-circuitpython-register==1.10.2 ; python_version >= "3.11" \
-    --hash=sha256:2c4fc4261895b669994b9eebb7972a8e31dc0f6971a3847fbbbaa899f0c668eb \
-    --hash=sha256:68e1899351b186f007b26326d01e4c5ed68187b50c059e1e414b53248f80053d
+adafruit-circuitpython-busdevice==5.2.12 ; python_version >= "3.11" \
+    --hash=sha256:61d85ce691f4336f867cdcfa741550422e9df86be880b1b6145d29273de77ff3 \
+    --hash=sha256:998db37953d522c241240adab066be2df3e320921b03a11fef63f83b4a0b53c6
+adafruit-circuitpython-connectionmanager==3.1.4 ; python_version >= "3.11" \
+    --hash=sha256:3b2434edd07c1efed96c799c7883163aa2641823a8609dda77fd8fb4ae3602ca \
+    --hash=sha256:b9b3d79a243abee9dd1ddfd0b4d1a7e658635dcd728ba05e00131d9bffdffa8e
+adafruit-circuitpython-register==1.10.3 ; python_version >= "3.11" \
+    --hash=sha256:7ecc1c3dcbf9e781e90c87c9a9cab808b36694f5c76ade4ec2e70b775e2e081a \
+    --hash=sha256:7fcc09f3e6402bb678e29da5e947fea67cf53de28d4f6c52cf5625ac6638a067
 adafruit-circuitpython-requests==4.1.10 ; python_version >= "3.11" \
     --hash=sha256:6a54aa39436e83e0dc75d60c861e5befa333bff265b947ea263156e64e467122 \
     --hash=sha256:a8657fe4b3a74c224e7365ebefa7742cc198373c1702bfc3f2b0ca3c4fd288b3
@@ -31,9 +31,9 @@ adafruit-pureio==1.1.11 ; python_version >= "3.11" \
 binho-host-adapter==0.1.6 ; python_version >= "3.11" \
     --hash=sha256:1e6da7a84e208c13b5f489066f05774bff1d593d0f5bf1ca149c2b8e83eae856 \
     --hash=sha256:f71ca176c1e2fc1a5dce128beb286da217555c6c7c805f2ed282a6f3507ec277
-prometheus-client==0.20.0 ; python_version >= "3.11" \
-    --hash=sha256:287629d00b147a32dcb2be0b9df905da599b2d82f80377083ec8463309a4bb89 \
-    --hash=sha256:cde524a85bce83ca359cc837f28b8c0db5cac7aa653a588fd7e84ba061c329e7
+prometheus-client==0.22.0 ; python_version >= "3.11" \
+    --hash=sha256:18da1d2241ac2d10c8d2110f13eedcd5c7c0c8af18c926e8731f04fc10cd575c \
+    --hash=sha256:c8951bbe64e62b96cd8e8f5d917279d1b9b91ab766793f33d4dce6c228558713
 pyftdi==0.56.0 ; python_version >= "3.11" \
     --hash=sha256:3ef0baadbf9031dde9d623ae66fac2d16ded36ce1b66c17765ca1944cb38b8b0
 pyserial==3.5 ; python_version >= "3.11" \
