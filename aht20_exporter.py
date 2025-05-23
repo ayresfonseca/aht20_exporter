@@ -4,24 +4,30 @@ connected via a TCA9548A I2C multiplexer and exposes the data as Prometheus metr
 """
 
 import time
+import os
+import logging
+import argparse
 import board
 import adafruit_tca9548a
 import adafruit_ahtx0
 from prometheus_client import start_http_server, Gauge
 
 # Constants
-SLEEP_INTERVAL = 2.0
-HTTP_SERVER_PORT = 9101
+SLEEP_INTERVAL = 2.0  # Time to wait between sensor readings (in seconds)
+HTTP_SERVER_PORT = 9101  # Port for Prometheus metrics server
 
 # Prometheus metrics
 aht20_temperature_celsius = Gauge(
     "aht20_temperature_celsius",
-    "Temperature in celsius provided by aht sensor",
+    "Temperature in Celsius provided by AHT sensor",
     ["sensor"],
 )
 aht20_humidity = Gauge(
-    "aht20_humidity", "Humidity in percents provided by dht sensor", ["sensor"]
+    "aht20_humidity", "Humidity in percent provided by AHT sensor", ["sensor"]
 )
+
+# Logging configuration
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 
 
 def read_sensor(sensor, label):
@@ -35,33 +41,48 @@ def read_sensor(sensor, label):
     try:
         temperature = sensor.temperature
         humidity = sensor.relative_humidity
+        # Update Prometheus metrics with formatted values
         aht20_humidity.labels(label).set(f"{humidity:.1f}")
         aht20_temperature_celsius.labels(label).set(f"{temperature:.1f}")
     except RuntimeError as error:
-        # Errors happen fairly often, DHT's are hard to read, just keep going
-        print(error.args[0])
+        # Sensor read errors are common, just log and continue
+        logging.warning(f"Sensor {label} read error: {error.args[0]}")
+    except Exception as e:
+        # Log any unexpected errors
+        logging.error(f"Unexpected error on sensor {label}: {e}")
 
 
 def main():
     """
     Main function to initialize sensors and start the Prometheus HTTP server.
     """
-    # Start up the server to expose the metrics.
+    parser = argparse.ArgumentParser(description="AHT20 Prometheus exporter")
+    parser.add_argument(
+        "--sensors",
+        type=int,
+        default=int(os.getenv("AHT20_SENSOR_COUNT", 3)),
+        help="Number of AHT20 sensors to use (default: 3)",
+    )
+    args = parser.parse_args()
+
+    # Start Prometheus HTTP server
     start_http_server(HTTP_SERVER_PORT)
-
-    # Create I2C bus as normal
     i2c = board.I2C()
-
-    # Create the TCA9548A object and give it the I2C bus
     tca = adafruit_tca9548a.TCA9548A(i2c)
 
-    # Create sensor objects, communicating over the board's default I2C bus
-    sensors = [
-        (adafruit_ahtx0.AHTx0(tca[0]), "sensor0"),
-        (adafruit_ahtx0.AHTx0(tca[1]), "sensor1"),
-        (adafruit_ahtx0.AHTx0(tca[2]), "sensor2"),
-    ]
+    sensors = []
+    for idx in range(args.sensors):
+        try:
+            # Initialize each sensor and assign a label
+            sensors.append((adafruit_ahtx0.AHTx0(tca[idx]), f"sensor{idx}"))
+        except Exception as e:
+            logging.warning(f"Could not initialize sensor {idx}: {e}")
 
+    if not sensors:
+        logging.error("No sensors initialized, exiting program.")
+        return
+
+    # Main loop: read all sensors and update metrics
     while True:
         for aht, prom_label in sensors:
             read_sensor(aht, prom_label)
