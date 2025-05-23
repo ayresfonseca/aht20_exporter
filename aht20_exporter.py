@@ -42,14 +42,14 @@ def read_sensor(sensor, label):
         temperature = sensor.temperature
         humidity = sensor.relative_humidity
         # Update Prometheus metrics with formatted values
-        aht20_humidity.labels(label).set(f"{humidity:.1f}")
-        aht20_temperature_celsius.labels(label).set(f"{temperature:.1f}")
+        aht20_humidity.labels(label).set(float(f"{humidity:.1f}"))
+        aht20_temperature_celsius.labels(label).set(float(f"{temperature:.1f}"))
     except RuntimeError as error:
         # Sensor read errors are common, just log and continue
-        logging.warning(f"Sensor {label} read error: {error.args[0]}")
-    except Exception as e:
+        logging.warning("Sensor %s read error: %s", label, error.args[0])
+    except Exception as e:  # pylint: disable=broad-except
         # Log any unexpected errors
-        logging.error(f"Unexpected error on sensor {label}: {e}")
+        logging.error("Unexpected error on sensor %s: %s", label, e)
 
 
 def main():
@@ -60,7 +60,7 @@ def main():
     parser.add_argument(
         "--sensors",
         type=int,
-        default=int(os.getenv("AHT20_SENSOR_COUNT", 3)),
+        default=int(os.getenv("AHT20_SENSOR_COUNT", "3")),
         help="Number of AHT20 sensors to use (default: 3)",
     )
     args = parser.parse_args()
@@ -75,8 +75,8 @@ def main():
         try:
             # Initialize each sensor and assign a label
             sensors.append((adafruit_ahtx0.AHTx0(tca[idx]), f"sensor{idx}"))
-        except Exception as e:
-            logging.warning(f"Could not initialize sensor {idx}: {e}")
+        except Exception as e:  # pylint: disable=broad-except
+            logging.warning("Could not initialize sensor %d: %s", idx, e)
 
     if not sensors:
         logging.error("No sensors initialized, exiting program.")
