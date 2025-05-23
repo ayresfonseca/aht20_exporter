@@ -1,45 +1,53 @@
-adafruit-blinka==8.39.2 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:1330a72ba025366cc314e64bd7868cbb10f07efcbe8aa09ffe6457b120e892d7 \
-    --hash=sha256:d8750ab3063b6739a08815ef92094695be1169334ad4770f7276bbca0e980162
-adafruit-circuitpython-ahtx0==1.0.21 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:5f99605120b41466de69affd1b734f1ad3b97e92d1de5cefba3c7d3b1cc688d1 \
-    --hash=sha256:e3c15866025579ff2c381adae6d2c85f8b396d9fcd621994136939a723934310
-adafruit-circuitpython-busdevice==5.2.9 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:78245c551eb3795a4f3739f1adac0b08a65c9fb0f722e866de620482cbbac51f \
-    --hash=sha256:9f9c3df385091410dac5961918e475ec88faed7ff543ad6d74208f08c2566513
-adafruit-circuitpython-connectionmanager==3.1.0 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:2a89f27e31be1b09dc221bffaa599baacd238a0bc369fe695c41be86c0d779a2 \
-    --hash=sha256:8dffd3e60d795e11c13f98795a45c42b568ea135953b2383c56a2fa6090512d3
-adafruit-circuitpython-register==1.9.18 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:146fdec0ca787663962e1a894a3028056f1adbd0322a1d187bdeda739e4e228d \
-    --hash=sha256:fc84e55129c32e65e740c37f821efb1a6ab2b9439d2b27459c85a6017b0d9302
-adafruit-circuitpython-requests==4.0.0 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:43fa8bd6dcc9a056d60987f5642391d0b2777becd24b19075473a098f6ecedcd \
-    --hash=sha256:789b70719c04c3963b4ddcb9d4ef469aa48d14d044e2680427df432ca2350d1b
-adafruit-circuitpython-tca9548a==0.7.3 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:2ca0afe449321af7546589f7ec64bdefb0b347a70652532a37bb67a3a071db88 \
-    --hash=sha256:9d22ba5a3e04f5836f31713face038766ce3f1e661e099c55ba790b5b697747c
-adafruit-circuitpython-typing==1.10.3 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:4c5c1eeb3ae8a3d2dfa75129654c73690fbdb576d9069542a6ea3355467e1e74 \
-    --hash=sha256:4e23d6828deafa4dfd554fd7d3f06b8ff8e2cc554b9c7aecba9d778d45970c18
-adafruit-platformdetect==3.63.0 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:6e7b5c3ff3f47a842c8c84107092edb17b0f712ca5295354a7e7ff442fd4e66e \
-    --hash=sha256:a82a86072963179f6bd5723e070b2e1786cc26d82fe8d3e40ff524b449d10abe
-adafruit-pureio==1.1.11 ; python_version >= "3.9" and python_version < "4.0" \
+adafruit-blinka==8.58.1 ; python_version >= "3.11" \
+    --hash=sha256:d26dde6b59747aba1944b2ac9db58f97bb8ca891eddacf90deacd9b4aba1190c \
+    --hash=sha256:e685474308d8c9111f4d492113d67a0c808f83c712ba3f2dc7895df782e00355
+adafruit-circuitpython-ahtx0==1.0.26 ; python_version >= "3.11" \
+    --hash=sha256:091f4b043dd7eca74d0f795d912c61cc1cd5e0ab445d6e2fda88c74c4041e720 \
+    --hash=sha256:a7bf1fc8269cae5328004747bb3f95a5fb66832285494b80e72e555d472ddcfa
+adafruit-circuitpython-busdevice==5.2.11 ; python_version >= "3.11" \
+    --hash=sha256:a9a1310bee7021703ccc247bb3ff04d0873573948a6c7bee9016361cd6707a71 \
+    --hash=sha256:d4379c9ae86a15f7044dea815a94525ca9eda6a7c0b2fa0e75cf9e700c9384b8
+adafruit-circuitpython-connectionmanager==3.1.3 ; python_version >= "3.11" \
+    --hash=sha256:0f133bdedf454ede0c0a866ed605fe166cc85f75cfcea74758e3622ae403e5f9 \
+    --hash=sha256:9df3a4c617dae27bad1ac8607f1a084312c8498d831ebe1c6a2c8d5cb309daea
+adafruit-circuitpython-register==1.10.2 ; python_version >= "3.11" \
+    --hash=sha256:2c4fc4261895b669994b9eebb7972a8e31dc0f6971a3847fbbbaa899f0c668eb \
+    --hash=sha256:68e1899351b186f007b26326d01e4c5ed68187b50c059e1e414b53248f80053d
+adafruit-circuitpython-requests==4.1.10 ; python_version >= "3.11" \
+    --hash=sha256:6a54aa39436e83e0dc75d60c861e5befa333bff265b947ea263156e64e467122 \
+    --hash=sha256:a8657fe4b3a74c224e7365ebefa7742cc198373c1702bfc3f2b0ca3c4fd288b3
+adafruit-circuitpython-tca9548a==0.8.1 ; python_version >= "3.11" \
+    --hash=sha256:299613c63ae4f8bd45f3fb545344f894014c88a828dd2c3e505dd2adac9cb036 \
+    --hash=sha256:f2d94eaa19f1fd989e706088ef2aaa58741ed4542e93fa918203eee3ed532525
+adafruit-circuitpython-typing==1.11.2 ; python_version >= "3.11" \
+    --hash=sha256:c7ac8532a9ad7e4a65d5588764b7483c0b6967d305c37faebcc0c5356d677e33 \
+    --hash=sha256:e1401a09bbfdf67e43875cc6755b3af0eda8381b12c9c8f759bd7676b7425e1c
+adafruit-platformdetect==3.79.0 ; python_version >= "3.11" \
+    --hash=sha256:10e4dccaa72c2a0fcb64eab1482b55857264d667ae5481963a20786948a44b72 \
+    --hash=sha256:13f522c4ab92441600c3f47fd795b1610a646034922ecd2cbc1e207c64c3cf7f
+adafruit-pureio==1.1.11 ; python_version >= "3.11" \
     --hash=sha256:281ab2099372cc0decc26326918996cbf21b8eed694ec4764d51eefa029d324e \
     --hash=sha256:c4cfbb365731942d1f1092a116f47dfdae0aef18c5b27f1072b5824ad5ea8c7c
-prometheus-client==0.20.0 ; python_version >= "3.9" and python_version < "4.0" \
+binho-host-adapter==0.1.6 ; python_version >= "3.11" \
+    --hash=sha256:1e6da7a84e208c13b5f489066f05774bff1d593d0f5bf1ca149c2b8e83eae856 \
+    --hash=sha256:f71ca176c1e2fc1a5dce128beb286da217555c6c7c805f2ed282a6f3507ec277
+prometheus-client==0.20.0 ; python_version >= "3.11" \
     --hash=sha256:287629d00b147a32dcb2be0b9df905da599b2d82f80377083ec8463309a4bb89 \
     --hash=sha256:cde524a85bce83ca359cc837f28b8c0db5cac7aa653a588fd7e84ba061c329e7
-pyftdi==0.55.4 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:64a804ea1c652e6935897df7867dbba18910848cad0a4927ccdb06813c072c85 \
-    --hash=sha256:cb2770b606507024a65e0a520bf892f239a36cec25cab45338ce3e3027de53c8
-pyserial==3.5 ; python_version >= "3.9" and python_version < "4.0" \
+pyftdi==0.56.0 ; python_version >= "3.11" \
+    --hash=sha256:3ef0baadbf9031dde9d623ae66fac2d16ded36ce1b66c17765ca1944cb38b8b0
+pyserial==3.5 ; python_version >= "3.11" \
     --hash=sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb \
     --hash=sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0
-pyusb==1.2.1 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36 \
-    --hash=sha256:a4cc7404a203144754164b8b40994e2849fde1cfff06b08492f12fff9d9de7b9
-typing-extensions==4.12.0 ; python_version >= "3.9" and python_version < "4.0" \
-    --hash=sha256:8cbcdc8606ebcb0d95453ad7dc5065e6237b6aa230a31e81d0f440c30fed5fd8 \
-    --hash=sha256:b349c66bea9016ac22978d800cfff206d5f9816951f12a7d0ec5578b0a819594
+pyusb==1.3.1 ; python_version >= "3.11" \
+    --hash=sha256:3af070b607467c1c164f49d5b0caabe8ac78dbed9298d703a8dbf9df4052d17e \
+    --hash=sha256:bf9b754557af4717fe80c2b07cc2b923a9151f5c08d17bdb5345dac09d6a0430
+sysv-ipc==1.1.0 ; sys_platform == "linux" and platform_machine != "mips" and python_version >= "3.11" \
+    --hash=sha256:0f063cbd36ec232032e425769ebc871f195a7d183b9af32f9901589ea7129ac3 \
+    --hash=sha256:30611dccecd8fa0dc9f83d4d465e5047692df0ec9a095abef8b90ccc64afbdaf \
+    --hash=sha256:4bbbe4e5ad5ab859e6d21fc8ff3e3b01082b959fa5c2cd76289dbcd56350c5f9 \
+    --hash=sha256:61190b934b0277f7a189092dcabceee8d9736fd73de90fd9b50ea69f0bac4723 \
+    --hash=sha256:ff6e3c98d8aa3e1ae5378d86869c4699c76f94318705d08085c97fb010770a31
+typing-extensions==4.13.2 ; python_version >= "3.11" \
+    --hash=sha256:a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c \
+    --hash=sha256:e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef

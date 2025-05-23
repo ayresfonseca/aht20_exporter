@@ -1,22 +1,30 @@
-[tool.poetry]
-name = "aht20-exporter"
-version = "0.1.0"
-description = "AHT20 Prometheus Exporter"
-authors = ["Ayres Fonseca <ayres.fonseca@yahoo.ca>"]
-license = "MIT"
+[project]
+name = "aht20_exporter"
+version = "0.2.0"
+description = "Prometheus exporter for AHTx0 sensors via TCA9548A I2C multiplexer"
+authors = [
+    { name = "Ayres Fonseca", email = "ayres.fonseca@gmail.com" }
+]
+license = { text = "MIT" }
 readme = "README.md"
+requires-python = ">=3.11"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-adafruit-circuitpython-tca9548a = "^0.7.3"
-adafruit-circuitpython-ahtx0 = "^1.0.21"
-prometheus-client = "^0.20.0"
+dependencies = [
+    "adafruit-circuitpython-tca9548a (>=0.8.1)",
+    "adafruit-circuitpython-ahtx0 (>=1.0.26)",
+    "prometheus-client (>=0.20.0)"
+]
 
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
+
+[project.scripts]
+aht20_exporter = "aht20_exporter:main"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
 pylint = "^3.2.2"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
