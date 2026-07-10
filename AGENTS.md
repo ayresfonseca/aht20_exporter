@@ -6,6 +6,7 @@ Prometheus exporter for AHT20 temperature/humidity sensors connected via a TCA95
 
 - Single-file project: all logic lives in [`aht20_exporter.py`](aht20_exporter.py)
 - Python ≥ 3.11, managed with **Poetry ≥ 2.0**
+- Target platform: **Raspberry Pi 3 Model B Rev 1.2**, Raspbian 12.14, Python 3.11.2
 - Metrics exposed at `http://localhost:9101/metrics`
 - Hardware-only: `board`, `adafruit_tca9548a`, and `adafruit_ahtx0` require physical I2C hardware — unit tests cannot be run without a Raspberry Pi with AHT20 sensors attached
 
