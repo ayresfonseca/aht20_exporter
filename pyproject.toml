@@ -1,6 +1,6 @@
 [project]
 name = "aht20_exporter"
-version = "0.2.0"
+version = "0.3.0"
 description = "Prometheus exporter for AHTx0 sensors via TCA9548A I2C multiplexer"
 authors = [
     { name = "Ayres Fonseca", email = "ayres.fonseca@gmail.com" }
