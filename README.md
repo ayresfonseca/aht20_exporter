@@ -8,7 +8,9 @@ Based on the official [Python client](https://github.com/prometheus/client_pytho
 
 - Reads temperature and humidity from multiple AHTx0 sensors via TCA9548A multiplexer
 - Exposes metrics in Prometheus format
-- Flexible sensor count via CLI argument or environment variable
+- Per-sensor availability metric (`aht20_sensor_up`) for alerting
+- Flexible sensor count and HTTP port via CLI arguments or environment variables
+- Graceful shutdown on `SIGTERM`/`SIGINT`
 
 ## Requirements
 
@@ -41,25 +43,40 @@ Specify the number of sensors:
 ```sh
 poetry run aht20_exporter --sensors 4
 ```
-Or via environment variable:
+
+Override the HTTP port:
+```sh
+poetry run aht20_exporter --port 9200
+```
+
+All options are also configurable via environment variables:
 ```sh
 export AHT20_SENSOR_COUNT=4
+export AHT20_PORT=9200
 poetry run aht20_exporter
 ```
 
-Metrics will be available at [http://localhost:9101/metrics](http://localhost:9101/metrics).
+Metrics will be available at [http://localhost:9101/metrics](http://localhost:9101/metrics) (or your chosen port).
 
 ## Prometheus Metrics
 
-- `aht20_temperature_celsius{sensor="sensor0"}`
-- `aht20_humidity{sensor="sensor0"}`
+| Metric | Description |
+|--------|-------------|
+| `aht20_temperature_celsius{sensor="sensorN"}` | Temperature in Celsius |
+| `aht20_humidity{sensor="sensorN"}` | Relative humidity in percent |
+| `aht20_sensor_up{sensor="sensorN"}` | `1` if the sensor is reachable, `0` on error |
 
-Each sensor is labeled as `sensor0`, `sensor1`, etc.
+Sensors are labeled `sensor0`, `sensor1`, etc. Use `aht20_sensor_up` for alerting on sensor failures.
 
 ## Development
 
-- Format code: `poetry run black .`
-- Lint code: `poetry run pylint aht20_exporter.py`
+```sh
+poetry run black .                                          # format
+flake8 --extend-ignore=E501 $(git ls-files '*.py')         # style check
+pylint --disable=C0301 $(git ls-files '*.py')              # lint
+```
+
+> **Note:** `board`, `adafruit_tca9548a`, and `adafruit_ahtx0` require physical I2C hardware. The exporter cannot be tested without a Raspberry Pi with AHT20 sensors attached.
 
 ## Troubleshooting
 
